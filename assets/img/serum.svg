@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Face serum placeholder">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6EFDC"/><stop offset="1" stop-color="#E9D6AC"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A75E"/><stop offset="1" stop-color="#AE7A2F"/></linearGradient>
+<linearGradient id="cap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5B274"/><stop offset="1" stop-color="#A9834A"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<g fill="#1B4D2E" opacity=".08">
+<path d="M55 550c48-105 145-145 232-130-38 95-125 155-232 130z"/>
+<path d="M550 115c-32 78-104 112-170 102 27-72 95-115 170-102z"/>
+</g>
+<circle cx="300" cy="320" r="180" fill="#fff" opacity=".42"/>
+<ellipse cx="300" cy="500" rx="105" ry="13" fill="#1B4D2E" opacity=".15"/>
+<rect x="288" y="118" width="24" height="32" rx="11" fill="#123420"/>
+<rect x="274" y="146" width="52" height="46" rx="8" fill="url(#cap)"/>
+<rect x="284" y="192" width="32" height="18" fill="#8A6A33"/>
+<path d="M284 210h32l40 40H244z" fill="url(#glass)"/>
+<rect x="244" y="248" width="112" height="238" rx="20" fill="url(#glass)"/>
+<rect x="258" y="268" width="11" height="190" rx="5.5" fill="#fff" opacity=".3"/>
+<rect x="260" y="304" width="80" height="122" rx="9" fill="#F5F1E6"/>
+<path d="M300 318c-7 6-10 13-10 19 0 7 4 12 10 12s10-5 10-12c0-6-3-13-10-19z" fill="#4CAF50"/>
+<text x="300" y="374" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
+<rect x="280" y="383" width="40" height="3" rx="1.5" fill="#C6A15A"/>
+<text x="300" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#5B6B52">Glow Face Serum</text>
+</svg>

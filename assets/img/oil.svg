@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Herbal hair oil placeholder">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F5E6"/><stop offset="1" stop-color="#D9E6C0"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98A45"/><stop offset="1" stop-color="#9A5E26"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<g fill="#1B4D2E" opacity=".1">
+<path d="M40 540c50-110 150-150 240-135-40 100-130 160-240 135z"/>
+<path d="M560 100c-35 85-115 120-185 110 30-80 105-125 185-110z"/>
+</g>
+<circle cx="300" cy="310" r="185" fill="#ffffff" opacity=".4"/>
+<ellipse cx="300" cy="512" rx="125" ry="15" fill="#1B4D2E" opacity=".15"/>
+<rect x="290" y="86" width="20" height="26" rx="9" fill="#123420"/>
+<rect x="272" y="108" width="56" height="48" rx="9" fill="#1B4D2E"/>
+<rect x="282" y="156" width="36" height="26" fill="#7C4A1E"/>
+<path d="M282 182h36l52 48H230z" fill="url(#glass)"/>
+<rect x="230" y="228" width="140" height="284" rx="26" fill="url(#glass)"/>
+<rect x="246" y="250" width="13" height="230" rx="6.5" fill="#fff" opacity=".28"/>
+<rect x="248" y="296" width="104" height="152" rx="10" fill="#F5F1E6"/>
+<path d="M300 312c-9 7-13 16-13 24 0 9 6 15 13 15s13-6 13-15c0-8-4-17-13-24z" fill="#4CAF50"/>
+<text x="300" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
+<rect x="272" y="394" width="56" height="3" rx="1.5" fill="#C6A15A"/>
+<text x="300" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5B6B52">Herbal Hair Oil</text>
+</svg>

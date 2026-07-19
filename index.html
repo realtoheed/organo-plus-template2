@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organo+ | Template 2 — Organic Store</title>
+<meta name="description" content="Organo+ — Herbal by Nature. Pakistan's trusted online store for 100% natural &amp; organic hair and skin care products.">
+<meta name="theme-color" content="#1B4D2E">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -25,7 +29,7 @@
   ul{list-style:none;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1280px;margin:0 auto;padding:0 24px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:.3s;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:.3s;font-family:inherit;}
   .btn-green{background:var(--forest);color:#fff;}
   .btn-green:hover{background:var(--forest-deep);}
   .btn-gold{background:var(--gold);color:var(--forest-deep);}
@@ -34,7 +38,9 @@
   .btn-sale:hover{filter:brightness(1.1);}
 
   .leaf-ph{position:relative;background:linear-gradient(135deg,#e7ecd9,#d8e3c4 40%,#c9dcae);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .leaf-ph svg{width:32%;height:32%;opacity:.5;}
+  .pimg img,.timg img,.cimg img,.bimg img,.gal-grid .g img,.slide-visual img{width:100%;height:100%;object-fit:cover;display:block;}
+  .pimg img,.timg img,.gal-grid .g img{transition:transform .5s ease;}
+  .pcard:hover .pimg img,.tcard:hover .timg img,.gal-grid .g:hover img{transform:scale(1.06);}
 
   /* announcement + header */
   .announce{background:var(--sale);color:#fff;text-align:center;font-size:13px;font-weight:600;padding:9px 12px;letter-spacing:.03em;}
@@ -42,10 +48,12 @@
   .header-mid{background:#fff;border-bottom:1px solid var(--line);}
   .header-mid .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px;}
   .logo img{height:48px;width:auto;}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-btn svg{width:26px;height:26px;color:var(--forest);display:block;}
   .search{flex:1;display:flex;max-width:560px;}
-  .search input{flex:1;border:2px solid var(--forest);border-right:none;border-radius:8px 0 0 8px;padding:11px 16px;font-size:14px;outline:none;font-family:inherit;}
+  .search input{flex:1;min-width:0;border:2px solid var(--forest);border-right:none;border-radius:8px 0 0 8px;padding:11px 16px;font-size:14px;outline:none;font-family:inherit;}
   .search button{background:var(--forest);color:#fff;border:none;border-radius:0 8px 8px 0;padding:0 20px;cursor:pointer;}
-  .search button svg{width:18px;height:18px;}
+  .search button svg{width:18px;height:18px;display:block;}
   .head-icons{display:flex;gap:22px;margin-left:auto;align-items:center;}
   .head-icons a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:#4a5546;font-weight:500;position:relative;}
   .head-icons svg{width:22px;height:22px;color:var(--forest);}
@@ -72,6 +80,31 @@
   .nav-hot{margin-left:auto;}
   .nav-hot a{color:#FFD86B !important;}
 
+  /* mobile drawer */
+  .drawer-overlay{position:fixed;inset:0;background:rgba(18,52,32,.55);opacity:0;visibility:hidden;transition:.3s;z-index:1100;}
+  .drawer-overlay.show{opacity:1;visibility:visible;}
+  .drawer{
+    position:fixed;top:0;left:0;bottom:0;width:min(320px,86vw);background:#fff;z-index:1200;
+    transform:translateX(-105%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+    display:flex;flex-direction:column;overflow-y:auto;box-shadow:20px 0 60px -20px rgba(18,52,32,.4);
+  }
+  .drawer.show{transform:translateX(0);}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--cream);}
+  .drawer-head img{height:38px;width:auto;}
+  .drawer-close{background:none;border:none;font-size:28px;line-height:1;cursor:pointer;color:var(--forest-deep);padding:2px 6px;}
+  .drawer nav{padding:8px 0 24px;}
+  .d-link,.d-toggle{
+    display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 22px;
+    font-size:13.5px;font-weight:600;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--line);
+    cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.05em;text-align:left;
+  }
+  .d-toggle .plus{font-size:20px;color:var(--forest);transition:.25s;line-height:1;}
+  .d-item.open .plus{transform:rotate(45deg);}
+  .d-sub{display:none;background:var(--cream);}
+  .d-item.open .d-sub{display:block;}
+  .d-sub a{display:block;padding:12px 22px 12px 36px;font-size:13.5px;color:#4a5546;border-bottom:1px solid var(--line);}
+  .d-hot{color:var(--sale) !important;}
+
   /* hero slider */
   .slider{position:relative;overflow:hidden;}
   .slides{display:flex;transition:transform .6s ease;}
@@ -84,11 +117,11 @@
   .slide.s3{background:linear-gradient(120deg,#C6A15A,#DCC08C);color:var(--forest-deep);}
   .slide .tag{display:inline-block;background:var(--sale);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px;}
   .slide.s2 .tag{background:var(--forest);}
-  .slide h2{font-size:clamp(30px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:14px;}
+  .slide h2{font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:14px;}
   .slide h2 span{color:var(--gold);}
   .slide.s2 h2 span,.slide.s3 h2 span{color:var(--sale);}
   .slide p{font-size:16px;opacity:.9;margin-bottom:26px;max-width:440px;}
-  .slide-visual{height:330px;border-radius:24px;}
+  .slide-visual{height:330px;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(18,52,32,.45);}
   .slider-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
   .slider-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;border:1px solid rgba(0,0,0,.15);}
   .slider-dots span.active{background:var(--gold);}
@@ -114,7 +147,7 @@
   /* categories */
   .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
   .cat-card{text-align:center;cursor:pointer;}
-  .cat-card .cimg{aspect-ratio:1;border-radius:50%;border:3px solid var(--line);transition:.3s;margin-bottom:12px;}
+  .cat-card .cimg{aspect-ratio:1;border-radius:50%;border:3px solid var(--line);transition:.3s;margin-bottom:12px;overflow:hidden;}
   .cat-card:hover .cimg{border-color:var(--gold);transform:translateY(-5px);}
   .cat-card b{font-size:13.5px;color:var(--forest-deep);font-weight:600;}
 
@@ -123,13 +156,13 @@
   .pcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:.3s;display:flex;flex-direction:column;}
   .pcard:hover{box-shadow:0 22px 44px -18px rgba(18,52,32,.28);transform:translateY(-4px);}
   .pimg{aspect-ratio:1;position:relative;}
-  .sale-badge{position:absolute;top:12px;left:12px;background:var(--sale);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;letter-spacing:.04em;}
-  .ship-badge{position:absolute;bottom:12px;left:12px;background:var(--forest);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;}
+  .sale-badge{position:absolute;top:12px;left:12px;background:var(--sale);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;letter-spacing:.04em;z-index:2;}
+  .ship-badge{position:absolute;bottom:12px;left:12px;background:var(--forest);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;z-index:2;}
   .pbody{padding:16px;display:flex;flex-direction:column;flex:1;}
   .pbody .stars{color:var(--gold);font-size:13px;margin-bottom:6px;letter-spacing:2px;}
   .pbody .stars small{color:#8a9480;font-size:11px;letter-spacing:0;margin-left:5px;}
   .pbody h4{font-size:14.5px;font-weight:600;margin-bottom:8px;line-height:1.4;min-height:40px;}
-  .price-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .price-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
   .price{font-size:19px;font-weight:800;color:var(--forest-deep);}
   .price-old{font-size:13.5px;color:#9aa591;text-decoration:line-through;}
   .save-pill{background:#FCE9E6;color:var(--sale);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;}
@@ -169,13 +202,13 @@
   .rev-card .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
   .rev-card p{font-size:14px;line-height:1.7;color:#4a5546;margin-bottom:18px;}
   .rev-who{display:flex;align-items:center;gap:12px;}
-  .rev-av{width:42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;}
+  .rev-av{width:42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
   .rev-who b{font-size:13.5px;display:block;}
   .rev-who span{font-size:11.5px;color:var(--leaf);font-weight:600;}
 
   /* gallery */
   .gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
-  .gal-grid .g{aspect-ratio:1;border-radius:10px;}
+  .gal-grid .g{aspect-ratio:1;border-radius:10px;overflow:hidden;}
 
   /* blog */
   .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
@@ -199,7 +232,7 @@
   }
   .tcard:hover{transform:translateY(-5px);box-shadow:0 18px 34px -16px rgba(18,52,32,.25);}
   .tcard .timg{aspect-ratio:1;position:relative;}
-  .tcard .tbadge{position:absolute;top:10px;left:10px;background:var(--sale);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;}
+  .tcard .tbadge{position:absolute;top:10px;left:10px;background:var(--sale);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;z-index:2;}
   .tcard .tbody{padding:14px;}
   .tcard .turdu{font-size:12px;color:var(--leaf);font-weight:600;margin-bottom:4px;}
   .tcard h5{font-size:13.5px;font-weight:600;margin-bottom:6px;line-height:1.35;}
@@ -234,12 +267,12 @@
   .newsletter h3{font-size:26px;font-weight:800;margin-bottom:8px;}
   .newsletter p{color:#b8c4ad;font-size:14px;margin-bottom:24px;}
   .nl-form{display:flex;gap:10px;max-width:480px;margin:0 auto;}
-  .nl-form input{flex:1;padding:14px 18px;border-radius:8px;border:none;font-size:14px;font-family:inherit;}
+  .nl-form input{flex:1;min-width:0;padding:14px 18px;border-radius:8px;border:none;font-size:14px;font-family:inherit;}
 
   /* footer */
   footer{background:var(--forest-deep);color:#b6c0aa;padding:70px 0 0;}
   .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);}
-  .fgrid .flogo img{height:46px;margin-bottom:16px;}
+  .fgrid .flogo img{height:46px;width:auto;margin-bottom:16px;}
   .fgrid p{font-size:13px;line-height:1.7;max-width:280px;}
   .fsocial{display:flex;gap:10px;margin-top:18px;}
   .fsocial a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;transition:.2s;}
@@ -250,7 +283,7 @@
   .fgrid ul a{font-size:13.5px;transition:.2s;}
   .fgrid ul a:hover{color:var(--gold);}
   .fbottom{display:flex;align-items:center;justify-content:space-between;padding:22px 0;font-size:12.5px;flex-wrap:wrap;gap:12px;}
-  .fpay{display:flex;gap:8px;}
+  .fpay{display:flex;gap:8px;flex-wrap:wrap;}
   .fpay span{border:1px solid rgba(255,255,255,.2);padding:4px 10px;border-radius:5px;font-size:10px;letter-spacing:.05em;}
 
   /* whatsapp float */
@@ -262,19 +295,108 @@
   .wa-float:hover{transform:scale(1.08);}
   .wa-float svg{width:30px;height:30px;color:#fff;}
 
+  /* back to top */
+  .to-top{
+    position:fixed;bottom:92px;right:29px;width:46px;height:46px;border-radius:50%;
+    background:var(--forest);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    z-index:998;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.22);
+  }
+  .to-top.show{opacity:1;visibility:visible;transform:none;}
+  .to-top svg{width:18px;height:18px;}
+
+  /* add-to-cart toast */
+  .toast{
+    position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);max-width:calc(100vw - 40px);
+    background:var(--forest-deep);color:#fff;padding:12px 22px;border-radius:100px;font-size:13.5px;font-weight:600;
+    opacity:0;visibility:hidden;transition:.35s;z-index:1300;box-shadow:0 10px 26px rgba(0,0,0,.3);
+    display:flex;gap:9px;align-items:center;white-space:nowrap;overflow:hidden;
+  }
+  .toast.show{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .toast svg{width:17px;height:17px;color:var(--leaf-light);flex-shrink:0;}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .tslide-track{animation:none;}
+  }
+
+  /* ============ RESPONSIVE ============ */
   @media(max-width:1024px){
-    .prod-grid{grid-template-columns:repeat(2,1fr);}
+    .prod-grid{grid-template-columns:repeat(3,1fr);gap:18px;}
     .cat-grid{grid-template-columns:repeat(3,1fr);}
-    .tier-grid{grid-template-columns:1fr;}
-    .rev-grid,.blog-grid{grid-template-columns:1fr;}
-    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
-    .slide{grid-template-columns:1fr;min-height:auto;padding:40px 24px;}
-    .slide-visual{display:none;}
-    .fgrid{grid-template-columns:repeat(2,1fr);}
     .gal-grid{grid-template-columns:repeat(3,1fr);}
-    .mainnav ul{flex-wrap:wrap;}
-    .header-mid .wrap{flex-wrap:wrap;}
+    .fgrid{grid-template-columns:repeat(2,1fr);}
+    .header-mid .wrap{flex-wrap:wrap;gap:18px;}
     .search{order:3;max-width:100%;width:100%;}
+    .slide{padding:44px 5vw;}
+    .slide-visual{height:280px;}
+  }
+  @media(max-width:900px){
+    nav.mainnav{display:none;}
+    .menu-btn{display:block;}
+    .prod-grid{grid-template-columns:repeat(2,1fr);}
+    .tier-grid{grid-template-columns:1fr;}
+    .rev-grid{grid-template-columns:repeat(2,1fr);}
+    .blog-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .trust-item{justify-content:flex-start;}
+    .slide{grid-template-columns:1fr;min-height:auto;padding:40px 24px 56px;gap:26px;}
+    .slide-visual{height:230px;max-width:420px;width:100%;margin:0 auto;}
+    .slider-arrow{width:38px;height:38px;}
+    .promise-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+    .deal-banner{flex-direction:column;text-align:center;padding:36px 28px;}
+    .countdown{justify-content:center;}
+  }
+  @media(max-width:640px){
+    section{padding:46px 0;}
+    .wrap{padding:0 16px;}
+    .announce{font-size:11.5px;padding:8px 10px;}
+    .header-mid .wrap{gap:14px;padding-top:12px;padding-bottom:12px;}
+    .logo img{height:40px;}
+    .head-icons{gap:16px;}
+    .head-icons a span{display:none;}
+    .sec-head{margin-bottom:28px;}
+    .cat-grid{gap:12px;}
+    .cat-card b{font-size:12px;}
+    .prod-grid{gap:12px;}
+    .pbody{padding:12px;}
+    .pbody h4{font-size:13px;min-height:36px;}
+    .price{font-size:16px;}
+    .pcard .btn{padding:10px;font-size:13px;}
+    .rev-grid{grid-template-columns:1fr;}
+    .gal-grid{gap:6px;}
+    .slider-arrow{display:none;}
+    .slide{padding:36px 20px 52px;}
+    .slide-visual{height:200px;}
+    .slide p{font-size:14.5px;}
+    .trust-strip .wrap{padding:16px;}
+    .trust-item svg{width:24px;height:24px;}
+    .trust-item b{font-size:13px;}
+    .trust-item span{font-size:11px;}
+    .tier{padding:26px 18px;}
+    .deal-banner h3{font-size:22px;}
+    .cd{min-width:58px;padding:10px 12px;}
+    .cd b{font-size:20px;}
+    .nl-form{flex-direction:column;}
+    .newsletter{padding:46px 18px;}
+    .newsletter h3{font-size:22px;}
+    .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
+    .fgrid .flogo{grid-column:1 / -1;}
+    .fbottom{justify-content:center;text-align:center;}
+    footer{padding-top:50px;}
+    .wa-float{width:50px;height:50px;bottom:20px;right:20px;}
+    .wa-float svg{width:26px;height:26px;}
+    .to-top{width:42px;height:42px;bottom:82px;right:24px;}
+    .fade-edge::before,.fade-edge::after{width:40px;}
+    .tcard{min-width:190px;max-width:190px;}
+  }
+  @media(max-width:400px){
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+    .head-icons{gap:12px;}
+    .deal-banner{padding:30px 18px;}
   }
 </style>
 </head>
@@ -284,15 +406,18 @@
 
 <div class="header-mid">
   <div class="wrap">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <a href="#" class="logo"><img src="assets/logo-light.png" alt="Organo+"></a>
     <form class="search" onsubmit="return false;">
       <input type="text" placeholder="Search hair oil, shampoo, aloe vera...">
-      <button><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+      <button aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
     </form>
     <div class="head-icons">
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Login</a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>Wishlist</a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2l1.5 4M18 2l-1.5 4M3 8h18l-1.5 11a2 2 0 01-2 1.8H6.5a2 2 0 01-2-1.8L3 8z"/></svg>Cart<span class="cart-count">2</span></a>
+      <a href="#" aria-label="Login"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Login</span></a>
+      <a href="#" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg><span>Wishlist</span></a>
+      <a href="#" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2l1.5 4M18 2l-1.5 4M3 8h18l-1.5 11a2 2 0 01-2 1.8H6.5a2 2 0 01-2-1.8L3 8z"/></svg><span>Cart</span><span class="cart-count" id="cartCount">2</span></a>
     </div>
   </div>
 </div>
@@ -334,6 +459,47 @@
   </div>
 </nav>
 
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu">
+  <div class="drawer-head">
+    <img src="assets/logo-light.png" alt="Organo+">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav>
+    <a href="#" class="d-link">Home</a>
+    <div class="d-item">
+      <button class="d-toggle">Shop <span class="plus">+</span></button>
+      <div class="d-sub">
+        <a href="#shop">All Products</a>
+        <a href="#shop">Bestsellers</a>
+        <a href="#shop">New Arrivals</a>
+      </div>
+    </div>
+    <div class="d-item">
+      <button class="d-toggle">Hair Care <span class="plus">+</span></button>
+      <div class="d-sub">
+        <a href="#shop">Herbal Hair Oil</a>
+        <a href="#shop">Botanical Shampoo</a>
+        <a href="#shop">Repair Hair Mask</a>
+        <a href="#shop">Scalp Detox Scrub</a>
+      </div>
+    </div>
+    <div class="d-item">
+      <button class="d-toggle">Skin Care <span class="plus">+</span></button>
+      <div class="d-sub">
+        <a href="#shop">Aloe Vera Gel</a>
+        <a href="#shop">Glow Face Serum</a>
+        <a href="#shop">Body Wash</a>
+      </div>
+    </div>
+    <a href="#deals" class="d-link">Deals</a>
+    <a href="#blog" class="d-link">Blogs</a>
+    <a href="#contact" class="d-link">Contact</a>
+    <a href="#deals" class="d-link d-hot">🔥 Flash Sale</a>
+  </nav>
+</aside>
+
 <!-- ============ HERO SLIDER ============ -->
 <div class="slider" id="slider">
   <div class="slides" id="slides">
@@ -345,7 +511,7 @@
         <span class="ur tag-ur">خالص جڑی بوٹیوں کی دیکھ بھال، آپ کے دروازے تک</span>
         <a href="#shop" class="btn btn-gold">Shop Bestsellers</a>
       </div>
-      <div class="slide-visual leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M12 22C12 22 4 18 4 10.5C4 5 8 2 12 2C16 2 20 5 20 10.5C20 18 12 22 12 22Z"/></svg></div>
+      <div class="slide-visual leaf-ph"><img src="assets/img/hero-trio.svg" alt="Organo+ natural care product range"></div>
     </div>
     <div class="slide s2">
       <div>
@@ -355,7 +521,7 @@
         <span class="ur tag-ur">بالوں کی مضبوط جڑوں کے لیے قدرتی تیل</span>
         <a href="#shop" class="btn btn-green">Buy Now — $24.00</a>
       </div>
-      <div class="slide-visual leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><circle cx="12" cy="12" r="8"/></svg></div>
+      <div class="slide-visual leaf-ph"><img src="assets/img/oil.svg" alt="Herbal hair oil bottle"></div>
     </div>
     <div class="slide s3">
       <div>
@@ -365,11 +531,11 @@
         <span class="ur tag-ur">مکمل قدرتی روٹین، ایک خوبصورت تحفے کے ڈبے میں</span>
         <a href="#shop" class="btn btn-sale">Grab the Deal</a>
       </div>
-      <div class="slide-visual leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4M21 7v10l-9 4"/></svg></div>
+      <div class="slide-visual leaf-ph"><img src="assets/img/giftbox.svg" alt="Ritual gift box"></div>
     </div>
   </div>
-  <button class="slider-arrow prev" onclick="moveSlide(-1)">‹</button>
-  <button class="slider-arrow next" onclick="moveSlide(1)">›</button>
+  <button class="slider-arrow prev" onclick="moveSlide(-1)" aria-label="Previous slide">‹</button>
+  <button class="slider-arrow next" onclick="moveSlide(1)" aria-label="Next slide">›</button>
   <div class="slider-dots" id="dots"></div>
 </div>
 
@@ -388,12 +554,12 @@
   <div class="wrap">
     <div class="sec-head"><h2>Shop by Category</h2><div class="underline"></div></div>
     <div class="cat-grid">
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><circle cx="12" cy="12" r="7"/></svg></div><b>Hair Oils</b></div>
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M12 22C12 22 4 18 4 10.5C4 5 8 2 12 2C16 2 20 5 20 10.5C20 18 12 22 12 22Z"/></svg></div><b>Shampoos</b></div>
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M4 12c4-8 12-8 16 0-4 8-12 8-16 0z"/></svg></div><b>Skin Care</b></div>
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M12 2v20M4 8l8-6 8 6"/></svg></div><b>Body Care</b></div>
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M3 7l9-4 9 4-9 4-9-4z"/></svg></div><b>Gift Sets</b></div>
-      <div class="cat-card"><div class="cimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2-6.3-4.5-6.3 4.5L8 13.6l-6-4.4h7.6z"/></svg></div><b>Deals 🔥</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/oil.svg" alt="Hair Oils" loading="lazy"></div><b>Hair Oils</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/shampoo.svg" alt="Shampoos" loading="lazy"></div><b>Shampoos</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/aloe.svg" alt="Skin Care" loading="lazy"></div><b>Skin Care</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/wash.svg" alt="Body Care" loading="lazy"></div><b>Body Care</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/giftbox.svg" alt="Gift Sets" loading="lazy"></div><b>Gift Sets</b></div>
+      <div class="cat-card"><div class="cimg leaf-ph"><img src="assets/img/serum.svg" alt="Deals" loading="lazy"></div><b>Deals 🔥</b></div>
     </div>
   </div>
 </section>
@@ -502,8 +668,12 @@
   <div class="wrap">
     <div class="sec-head"><h2>#OrganoPlusFamily</h2><div class="underline"></div><p>Real customers, real results — tag us to get featured</p></div>
     <div class="gal-grid">
-      <div class="g leaf-ph"></div><div class="g leaf-ph"></div><div class="g leaf-ph"></div>
-      <div class="g leaf-ph"></div><div class="g leaf-ph"></div><div class="g leaf-ph"></div>
+      <div class="g leaf-ph"><img src="assets/img/oil.svg" alt="Customer photo — herbal hair oil" loading="lazy"></div>
+      <div class="g leaf-ph"><img src="assets/img/aloe.svg" alt="Customer photo — aloe vera gel" loading="lazy"></div>
+      <div class="g leaf-ph"><img src="assets/img/giftbox.svg" alt="Customer photo — ritual gift box" loading="lazy"></div>
+      <div class="g leaf-ph"><img src="assets/img/shampoo.svg" alt="Customer photo — botanical shampoo" loading="lazy"></div>
+      <div class="g leaf-ph"><img src="assets/img/serum.svg" alt="Customer photo — glow face serum" loading="lazy"></div>
+      <div class="g leaf-ph"><img src="assets/img/scrub.svg" alt="Customer photo — scalp detox scrub" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -513,9 +683,9 @@
   <div class="wrap">
     <div class="sec-head"><h2>From Our Blog</h2><div class="underline"></div></div>
     <div class="blog-grid">
-      <div class="bcard"><div class="bimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M12 22C12 22 4 18 4 10.5C4 5 8 2 12 2C16 2 20 5 20 10.5C20 18 12 22 12 22Z"/></svg></div><div class="bbody"><div class="bdate">Hair Care · Jul 2026</div><h4>Weekly Hair Oiling: The Complete Ritual Guide</h4><p>How 20 minutes a week can transform your scalp health, backed by herbal tradition.</p><a href="#" class="more">Read More →</a></div></div>
-      <div class="bcard"><div class="bimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><circle cx="12" cy="12" r="8"/></svg></div><div class="bbody"><div class="bdate">Skin Care · Jun 2026</div><h4>Aloe Vera 101: Nature's Multitasker</h4><p>Five ways to use pure aloe gel in your daily skin routine.</p><a href="#" class="more">Read More →</a></div></div>
-      <div class="bcard"><div class="bimg leaf-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1"><path d="M3 7l9-4 9 4-9 4-9-4z"/></svg></div><div class="bbody"><div class="bdate">Sustainability · Jun 2026</div><h4>Why We Chose Glass Over Plastic</h4><p>The story behind our eco-friendly packaging decision.</p><a href="#" class="more">Read More →</a></div></div>
+      <div class="bcard"><div class="bimg leaf-ph"><img src="assets/img/blog-oiling.svg" alt="Hair oiling ritual" loading="lazy"></div><div class="bbody"><div class="bdate">Hair Care · Jul 2026</div><h4>Weekly Hair Oiling: The Complete Ritual Guide</h4><p>How 20 minutes a week can transform your scalp health, backed by herbal tradition.</p><a href="#" class="more">Read More →</a></div></div>
+      <div class="bcard"><div class="bimg leaf-ph"><img src="assets/img/blog-aloe.svg" alt="Aloe vera plant" loading="lazy"></div><div class="bbody"><div class="bdate">Skin Care · Jun 2026</div><h4>Aloe Vera 101: Nature's Multitasker</h4><p>Five ways to use pure aloe gel in your daily skin routine.</p><a href="#" class="more">Read More →</a></div></div>
+      <div class="bcard"><div class="bimg leaf-ph"><img src="assets/img/blog-glass.svg" alt="Eco-friendly glass packaging" loading="lazy"></div><div class="bbody"><div class="bdate">Sustainability · Jun 2026</div><h4>Why We Chose Glass Over Plastic</h4><p>The story behind our eco-friendly packaging decision.</p><a href="#" class="more">Read More →</a></div></div>
     </div>
   </div>
 </section>
@@ -525,7 +695,7 @@
   <h3>Get 10% Off Your First Order</h3>
   <p>Subscribe for herbal tips, early access &amp; exclusive deals.</p>
   <form class="nl-form" onsubmit="return false;">
-    <input type="email" placeholder="Enter your email address" required>
+    <input type="email" placeholder="Enter your email address" required aria-label="Email address">
     <button class="btn btn-gold" type="submit">Subscribe</button>
   </form>
 </div>
@@ -539,10 +709,10 @@
         <p>Organo+ — Herbal by Nature. Your trusted online organic hair &amp; skin care store. 100% natural, cruelty-free, and eco-friendly.</p>
         <p class="footer-ur">پاکستان کا قابلِ اعتماد آرگینک اور جڑی بوٹیوں کا آن لائن اسٹور</p>
         <div class="fsocial">
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M23 3a10.9 10.9 0 01-3.1 1.5A4.5 4.5 0 0012 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22.5 6.4a3 3 0 00-2.1-2.1C18.5 3.8 12 3.8 12 3.8s-6.5 0-8.4.5A3 3 0 001.5 6.4 31.6 31.6 0 001 12a31.6 31.6 0 00.5 5.6 3 3 0 002.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 002.1-2.1A31.6 31.6 0 0023 12a31.6 31.6 0 00-.5-5.6z"/><path d="M9.8 15.1V8.9l5.4 3.1-5.4 3.1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M23 3a10.9 10.9 0 01-3.1 1.5A4.5 4.5 0 0012 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22.5 6.4a3 3 0 00-2.1-2.1C18.5 3.8 12 3.8 12 3.8s-6.5 0-8.4.5A3 3 0 001.5 6.4 31.6 31.6 0 001 12a31.6 31.6 0 00.5 5.6 3 3 0 002.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 002.1-2.1A31.6 31.6 0 0023 12a31.6 31.6 0 00-.5-5.6z"/><path d="M9.8 15.1V8.9l5.4 3.1-5.4 3.1z"/></svg></a>
         </div>
       </div>
       <div>
@@ -582,27 +752,36 @@
   </div>
 </footer>
 
-<a href="#" class="wa-float" title="Chat on WhatsApp">
+<a href="#" class="wa-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07a8.2 8.2 0 01-2.4-1.49 9 9 0 01-1.66-2.07c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 01-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 019.87 9.9c0 5.44-4.44 9.87-9.89 9.87zm8.4-18.28A11.8 11.8 0 0012.04 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.6 5.95L.06 24l6.3-1.65a11.87 11.87 0 005.68 1.45c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.5-8.4z"/></svg>
 </a>
 
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+  <span id="toastMsg">Added to cart</span>
+</div>
+
 <script>
   const products = [
-    {name:"Herbal Hair Oil — 100ml", price:24, old:30, badge:"SALE", ship:true},
-    {name:"Botanical Shampoo — 250ml", price:19, old:null, badge:null, ship:true},
-    {name:"Aloe Vera Gel — 200ml", price:16, old:20, badge:"SALE", ship:false},
-    {name:"Repair Hair Mask — 150ml", price:22, old:28, badge:"SALE", ship:true},
-    {name:"Body Wash — 300ml", price:18, old:null, badge:null, ship:false},
-    {name:"Glow Face Serum — 30ml", price:27, old:null, badge:"NEW", ship:true},
-    {name:"Scalp Detox Scrub — 120ml", price:21, old:null, badge:null, ship:false},
-    {name:"Ritual Gift Box (3-in-1 Bundle)", price:54, old:68, badge:"BUNDLE", ship:true},
+    {name:"Herbal Hair Oil — 100ml", price:24, old:30, badge:"SALE", ship:true, img:"assets/img/oil.svg"},
+    {name:"Botanical Shampoo — 250ml", price:19, old:null, badge:null, ship:true, img:"assets/img/shampoo.svg"},
+    {name:"Aloe Vera Gel — 200ml", price:16, old:20, badge:"SALE", ship:false, img:"assets/img/aloe.svg"},
+    {name:"Repair Hair Mask — 150ml", price:22, old:28, badge:"SALE", ship:true, img:"assets/img/mask.svg"},
+    {name:"Body Wash — 300ml", price:18, old:null, badge:null, ship:false, img:"assets/img/wash.svg"},
+    {name:"Glow Face Serum — 30ml", price:27, old:null, badge:"NEW", ship:true, img:"assets/img/serum.svg"},
+    {name:"Scalp Detox Scrub — 120ml", price:21, old:null, badge:null, ship:false, img:"assets/img/scrub.svg"},
+    {name:"Ritual Gift Box (3-in-1 Bundle)", price:54, old:68, badge:"BUNDLE", ship:true, img:"assets/img/giftbox.svg"},
   ];
   document.getElementById("prodGrid").innerHTML = products.map(p=>`
     <div class="pcard">
       <div class="pimg leaf-ph">
         ${p.badge?`<div class="sale-badge">${p.badge}</div>`:""}
         ${p.ship?`<div class="ship-badge">Free Shipping</div>`:""}
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1" style="width:32%;height:32%;opacity:.5;"><path d="M12 22C12 22 4 18 4 10.5C4 5 8 2 12 2C16 2 20 5 20 10.5C20 18 12 22 12 22Z"/></svg>
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
       </div>
       <div class="pbody">
         <div class="stars">★★★★★<small>(${120+Math.floor(p.price*7)})</small></div>
@@ -611,29 +790,29 @@
           <span class="price">$${p.price}.00</span>
           ${p.old?`<span class="price-old">$${p.old}.00</span><span class="save-pill">Save $${p.old-p.price}</span>`:""}
         </div>
-        <button class="btn btn-green">Buy Now</button>
+        <button class="btn btn-green" onclick="addToCart('${p.name.replace(/'/g,"\\'")}')">Buy Now</button>
       </div>
     </div>
   `).join("");
 
   // trending auto-scroll slider
   const trending = [
-    {name:"Rosemary Hair Oil", urdu:"روزمیری بالوں کا تیل", price:24, old:30, badge:"SALE"},
-    {name:"Neem &amp; Tea Tree Shampoo", urdu:"نیم شیمپو", price:19, old:null, badge:"HOT"},
-    {name:"Pure Aloe Vera Gel", urdu:"خالص ایلوویرا جیل", price:16, old:20, badge:"SALE"},
-    {name:"Argan Repair Mask", urdu:"آرگن ہیئر ماسک", price:22, old:28, badge:null},
-    {name:"Honey &amp; Oats Body Wash", urdu:"شہد باڈی واش", price:18, old:null, badge:"NEW"},
-    {name:"Saffron Glow Serum", urdu:"زعفران سیرم", price:27, old:null, badge:"NEW"},
-    {name:"Charcoal Scalp Scrub", urdu:"چارکول اسکرب", price:21, old:null, badge:null},
-    {name:"Complete Ritual Gift Box", urdu:"تحفہ باکس", price:54, old:68, badge:"BUNDLE"},
-    {name:"Moringa Hair Serum", urdu:"مورنگا سیرم", price:23, old:null, badge:"HOT"},
-    {name:"Shea Butter Cream", urdu:"شیا بٹر کریم", price:17, old:22, badge:"SALE"},
+    {name:"Rosemary Hair Oil", urdu:"روزمیری بالوں کا تیل", price:24, old:30, badge:"SALE", img:"assets/img/oil.svg"},
+    {name:"Neem &amp; Tea Tree Shampoo", urdu:"نیم شیمپو", price:19, old:null, badge:"HOT", img:"assets/img/shampoo.svg"},
+    {name:"Pure Aloe Vera Gel", urdu:"خالص ایلوویرا جیل", price:16, old:20, badge:"SALE", img:"assets/img/aloe.svg"},
+    {name:"Argan Repair Mask", urdu:"آرگن ہیئر ماسک", price:22, old:28, badge:null, img:"assets/img/mask.svg"},
+    {name:"Honey &amp; Oats Body Wash", urdu:"شہد باڈی واش", price:18, old:null, badge:"NEW", img:"assets/img/wash.svg"},
+    {name:"Saffron Glow Serum", urdu:"زعفران سیرم", price:27, old:null, badge:"NEW", img:"assets/img/serum.svg"},
+    {name:"Charcoal Scalp Scrub", urdu:"چارکول اسکرب", price:21, old:null, badge:null, img:"assets/img/scrub.svg"},
+    {name:"Complete Ritual Gift Box", urdu:"تحفہ باکس", price:54, old:68, badge:"BUNDLE", img:"assets/img/giftbox.svg"},
+    {name:"Moringa Hair Serum", urdu:"مورنگا سیرم", price:23, old:null, badge:"HOT", img:"assets/img/serum.svg"},
+    {name:"Shea Butter Cream", urdu:"شیا بٹر کریم", price:17, old:22, badge:"SALE", img:"assets/img/mask.svg"},
   ];
   const tHTML = trending.map(p=>`
     <div class="tcard">
       <div class="timg leaf-ph">
         ${p.badge?`<div class="tbadge">${p.badge}</div>`:""}
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1B4D2E" stroke-width="1" style="width:32%;height:32%;opacity:.5;"><path d="M12 22C12 22 4 18 4 10.5C4 5 8 2 12 2C16 2 20 5 20 10.5C20 18 12 22 12 22Z"/></svg>
+        <img src="${p.img}" alt="${p.name.replace(/&amp;/g,"&")}" loading="lazy">
       </div>
       <div class="tbody">
         <div class="turdu">${p.urdu}</div>
@@ -644,15 +823,36 @@
   `).join("");
   document.getElementById("tslideTrack").innerHTML = tHTML + tHTML;
 
-  // slider
+  // hero slider
   let cur = 0;
   const total = 3;
   const slides = document.getElementById("slides");
   const dots = document.getElementById("dots");
-  for(let i=0;i<total;i++){const d=document.createElement("span");if(i===0)d.className="active";d.onclick=()=>go(i);dots.appendChild(d);}
+  for(let i=0;i<total;i++){const d=document.createElement("span");if(i===0)d.className="active";d.onclick=()=>{go(i);resetTimer();};dots.appendChild(d);}
   function go(i){cur=(i+total)%total;slides.style.transform=`translateX(-${cur*100}%)`;[...dots.children].forEach((d,j)=>d.className=j===cur?"active":"");}
-  function moveSlide(d){go(cur+d);}
-  setInterval(()=>go(cur+1), 5500);
+  function moveSlide(d){go(cur+d);resetTimer();}
+  let sliderTimer = setInterval(()=>go(cur+1), 5500);
+  function resetTimer(){clearInterval(sliderTimer);sliderTimer=setInterval(()=>go(cur+1), 5500);}
+
+  // touch swipe for hero slider
+  const sliderEl = document.getElementById("slider");
+  let touchX = 0;
+  sliderEl.addEventListener("touchstart", e=>{touchX = e.touches[0].clientX;}, {passive:true});
+  sliderEl.addEventListener("touchend", e=>{
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 50) moveSlide(dx < 0 ? 1 : -1);
+  }, {passive:true});
+
+  // mobile drawer
+  const drawer = document.getElementById("drawer");
+  const overlay = document.getElementById("drawerOverlay");
+  function openDrawer(){drawer.classList.add("show");overlay.classList.add("show");document.body.style.overflow="hidden";}
+  function closeDrawer(){drawer.classList.remove("show");overlay.classList.remove("show");document.body.style.overflow="";}
+  document.getElementById("menuBtn").addEventListener("click", openDrawer);
+  document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+  document.querySelectorAll(".d-toggle").forEach(b=>b.addEventListener("click", ()=>b.parentElement.classList.toggle("open")));
+  document.querySelectorAll(".drawer a").forEach(a=>a.addEventListener("click", closeDrawer));
 
   // countdown
   let t = 11*3600 + 42*60 + 18;
@@ -667,6 +867,32 @@
     navigator.clipboard && navigator.clipboard.writeText(el.textContent.trim());
     const old=el.textContent;el.textContent="Copied!";setTimeout(()=>el.textContent=old,1200);
   }
+
+  // add-to-cart toast + badge
+  let cartTotal = 2, toastTimer;
+  function addToCart(name){
+    cartTotal++;
+    document.getElementById("cartCount").textContent = cartTotal;
+    const short = name.split("—")[0].trim();
+    document.getElementById("toastMsg").textContent = `${short} added to cart`;
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>toast.classList.remove("show"), 2200);
+  }
+
+  // back to top
+  const toTop = document.getElementById("toTop");
+  window.addEventListener("scroll", ()=>toTop.classList.toggle("show", window.scrollY > 600), {passive:true});
+  toTop.addEventListener("click", ()=>window.scrollTo({top:0, behavior:"smooth"}));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll(".pcard,.tier,.rev-card,.bcard,.promise-card,.cat-card,.sec-head,.deal-banner,.gal-grid .g");
+  revealEls.forEach(el=>el.classList.add("reveal"));
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+  },{threshold:.1, rootMargin:"0px 0px -30px"});
+  revealEls.forEach(el=>io.observe(el));
 </script>
 </body>
 </html>

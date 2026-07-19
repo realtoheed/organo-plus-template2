@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" role="img" aria-label="Hair oiling ritual placeholder">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F5E6"/><stop offset="1" stop-color="#DCE8C4"/></linearGradient>
+</defs>
+<rect width="600" height="340" fill="url(#bg)"/>
+<g fill="#1B4D2E" opacity=".12">
+<path d="M30 320c35-75 105-105 168-94-27 68-90 112-168 94z"/>
+<path d="M575 60c-24 58-78 84-127 77 20-54 70-86 127-77z"/>
+</g>
+<circle cx="300" cy="180" r="130" fill="#fff" opacity=".4"/>
+<!-- dropper above -->
+<rect x="290" y="36" width="20" height="14" rx="6" fill="#123420"/>
+<path d="M294 50h12l-3 34h-6z" fill="#8FAE7E"/>
+<path d="M300 96c-5 5-7 10-7 14 0 5 3 8 7 8s7-3 7-8c0-4-2-9-7-14z" fill="#C99A3F"/>
+<!-- bowl of oil -->
+<path d="M170 200a130 36 0 00260 0c0 62-54 100-130 100s-130-38-130-100z" fill="#8F6238"/>
+<ellipse cx="300" cy="200" rx="130" ry="36" fill="#A97C50"/>
+<ellipse cx="300" cy="198" rx="106" ry="26" fill="#DCA95F"/>
+<ellipse cx="272" cy="192" rx="26" ry="8" fill="#EBC286" opacity=".8"/>
+<!-- leaves beside bowl -->
+<path d="M448 260c14-28 44-40 68-36-10 26-36 44-68 36z" fill="#3E8E52"/>
+<path d="M92 262c22-20 52-22 72-12-16 22-46 30-72 12z" fill="#48A05E"/>
+</svg>

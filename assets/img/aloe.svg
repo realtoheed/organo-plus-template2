@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Aloe vera gel placeholder">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF5E4"/><stop offset="1" stop-color="#CDE6C1"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<circle cx="300" cy="320" r="190" fill="#fff" opacity=".38"/>
+<g>
+<path d="M300 118c26 60 30 132 12 198h-24c-18-66-14-138 12-198z" fill="#3E8E52"/>
+<path d="M230 158c40 44 63 106 65 158l-22 8c-34-52-53-110-43-166z" fill="#48A05E"/>
+<path d="M370 158c-40 44-63 106-65 158l22 8c34-52 53-110 43-166z" fill="#48A05E"/>
+<path d="M178 228c44 24 79 66 97 108l-18 12c-42-34-73-74-79-120z" fill="#2F7A44"/>
+<path d="M422 228c-44 24-79 66-97 108l18 12c42-34 73-74 79-120z" fill="#2F7A44"/>
+</g>
+<ellipse cx="300" cy="516" rx="130" ry="15" fill="#1B4D2E" opacity=".15"/>
+<rect x="206" y="306" width="188" height="48" rx="12" fill="#FBFAF3"/>
+<rect x="206" y="350" width="188" height="9" fill="#C6A15A"/>
+<rect x="214" y="359" width="172" height="150" rx="18" fill="#DFF2DC"/>
+<rect x="226" y="372" width="148" height="124" rx="12" fill="#BFE6B8" opacity=".75"/>
+<rect x="238" y="384" width="124" height="100" rx="10" fill="#F5F1E6"/>
+<path d="M300 396c-7 6-11 13-11 20 0 8 5 13 11 13s11-5 11-13c0-7-4-14-11-20z" fill="#4CAF50"/>
+<text x="300" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
+<rect x="276" y="461" width="48" height="3" rx="1.5" fill="#C6A15A"/>
+<text x="300" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#5B6B52">Aloe Vera Gel</text>
+</svg>
