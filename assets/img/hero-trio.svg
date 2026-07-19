@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Organo+ product range placeholder">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F5E6"/><stop offset="1" stop-color="#D6E4BE"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFF2EA"/><stop offset="1" stop-color="#D3DEC4"/></linearGradient>
 <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98A45"/><stop offset="1" stop-color="#9A5E26"/></linearGradient>
 <linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7048"/><stop offset="1" stop-color="#123420"/></linearGradient>
 </defs>
@@ -18,8 +18,8 @@
 <rect x="246" y="196" width="38" height="22" rx="5" fill="#0E2A1A"/>
 <path d="M246 218h38l42 44H204z" fill="url(#green)"/>
 <rect x="204" y="262" width="126" height="246" rx="22" fill="url(#green)"/>
-<rect x="222" y="326" width="90" height="122" rx="9" fill="#F5F1E6"/>
-<path d="M267 340c-7 6-11 13-11 20 0 7 5 12 11 12s11-5 11-12c0-7-4-14-11-20z" fill="#4CAF50"/>
+<rect x="222" y="326" width="90" height="122" rx="9" fill="#F4F2EB"/>
+<path d="M267 340c-7 6-11 13-11 20 0 7 5 12 11 12s11-5 11-12c0-7-4-14-11-20z" fill="#4E8B60"/>
 <text x="267" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
 <text x="267" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5B6B52">Shampoo</text>
 <!-- hair oil (center, front) -->
@@ -29,19 +29,19 @@
 <path d="M435 194h32l48 44H387z" fill="url(#amber)"/>
 <rect x="387" y="238" width="128" height="266" rx="24" fill="url(#amber)"/>
 <rect x="401" y="258" width="12" height="215" rx="6" fill="#fff" opacity=".28"/>
-<rect x="404" y="300" width="94" height="140" rx="10" fill="#F5F1E6"/>
-<path d="M451 316c-8 6-12 14-12 21 0 8 5 14 12 14s12-6 12-14c0-7-4-15-12-21z" fill="#4CAF50"/>
+<rect x="404" y="300" width="94" height="140" rx="10" fill="#F4F2EB"/>
+<path d="M451 316c-8 6-12 14-12 21 0 8 5 14 12 14s12-6 12-14c0-7-4-15-12-21z" fill="#4E8B60"/>
 <text x="451" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
-<rect x="429" y="390" width="44" height="3" rx="1.5" fill="#C6A15A"/>
+<rect x="429" y="390" width="44" height="3" rx="1.5" fill="#B9995C"/>
 <text x="451" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5B6B52">Hair Oil</text>
 <!-- aloe jar (right) -->
 <path d="M628 240c18 42 21 92 8 138h-17c-12-46-9-96 9-138z" fill="#3E8E52"/>
 <path d="M582 268c28 30 44 74 45 110l-15 6c-24-36-37-77-30-116z" fill="#48A05E"/>
 <path d="M674 268c-28 30-44 74-45 110l15 6c24-36 37-77 30-116z" fill="#48A05E"/>
 <rect x="562" y="372" width="132" height="34" rx="9" fill="#FBFAF3"/>
-<rect x="562" y="402" width="132" height="7" fill="#C6A15A"/>
+<rect x="562" y="402" width="132" height="7" fill="#B9995C"/>
 <rect x="568" y="409" width="120" height="100" rx="14" fill="#DFF2DC"/>
-<rect x="584" y="424" width="88" height="70" rx="8" fill="#F5F1E6"/>
+<rect x="584" y="424" width="88" height="70" rx="8" fill="#F4F2EB"/>
 <text x="628" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1B4D2E">ORGANO+</text>
 <text x="628" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5B6B52">Aloe Gel</text>
 </svg>

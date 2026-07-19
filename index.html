@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organo+ | Template 2 — Organic Store</title>
 <meta name="description" content="Organo+ — Herbal by Nature. Pakistan's trusted online store for 100% natural &amp; organic hair and skin care products.">
-<meta name="theme-color" content="#1B4D2E">
+<meta name="theme-color" content="#15402A">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest:#1B4D2E;
-    --forest-deep:#123420;
-    --leaf:#4CAF50;
-    --leaf-light:#8BC34A;
-    --cream:#F5F1E6;
-    --gold:#C6A15A;
-    --sale:#C0392B;
-    --ink:#232b21;
-    --line:rgba(27,77,46,0.14);
+    --forest:#15402A;
+    --forest-deep:#0D2B1C;
+    --leaf:#5F8A6C;
+    --leaf-light:#8FAE93;
+    --cream:#F4F2EB;
+    --gold:#B9995C;
+    --gold-light:#D6C49A;
+    --sale:#96352A;
+    --ink:#1F261E;
+    --line:rgba(21,64,42,0.14);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -37,14 +38,14 @@
   .btn-sale{background:var(--sale);color:#fff;}
   .btn-sale:hover{filter:brightness(1.1);}
 
-  .leaf-ph{position:relative;background:linear-gradient(135deg,#e7ecd9,#d8e3c4 40%,#c9dcae);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .leaf-ph{position:relative;background:linear-gradient(135deg,#ECEFE6,#DDE3D3 40%,#CCD6C1);display:flex;align-items:center;justify-content:center;overflow:hidden;}
   .pimg img,.timg img,.cimg img,.bimg img,.gal-grid .g img,.slide-visual img{width:100%;height:100%;object-fit:cover;display:block;}
   .pimg img,.timg img,.gal-grid .g img{transition:transform .5s ease;}
   .pcard:hover .pimg img,.tcard:hover .timg img,.gal-grid .g:hover img{transform:scale(1.06);}
 
   /* announcement + header */
-  .announce{background:var(--sale);color:#fff;text-align:center;font-size:13px;font-weight:600;padding:9px 12px;letter-spacing:.03em;}
-  .announce b{text-decoration:underline;}
+  .announce{background:var(--forest-deep);color:#E7E3D3;text-align:center;font-size:13px;font-weight:500;padding:9px 12px;letter-spacing:.04em;}
+  .announce b{text-decoration:underline;color:var(--gold-light);}
   .header-mid{background:#fff;border-bottom:1px solid var(--line);}
   .header-mid .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px;}
   .logo img{height:48px;width:auto;}
@@ -78,7 +79,7 @@
   .mainnav .drop a{display:block;padding:11px 20px;font-size:13.5px;color:var(--ink);font-weight:500;}
   .mainnav .drop a:hover{background:var(--cream);color:var(--forest);}
   .nav-hot{margin-left:auto;}
-  .nav-hot a{color:#FFD86B !important;}
+  .nav-hot a{color:var(--gold-light) !important;}
 
   /* mobile drawer */
   .drawer-overlay{position:fixed;inset:0;background:rgba(18,52,32,.55);opacity:0;visibility:hidden;transition:.3s;z-index:1100;}
@@ -112,9 +113,9 @@
     min-width:100%;min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;
     padding:50px 8vw;gap:30px;
   }
-  .slide.s1{background:linear-gradient(120deg,#123420,#1B4D2E 60%,#2c6a41);color:#fff;}
-  .slide.s2{background:linear-gradient(120deg,#F5F1E6,#EFE8D6);color:var(--forest-deep);}
-  .slide.s3{background:linear-gradient(120deg,#C6A15A,#DCC08C);color:var(--forest-deep);}
+  .slide.s1{background:linear-gradient(120deg,#0D2B1C,#15402A 60%,#23573A);color:#fff;}
+  .slide.s2{background:linear-gradient(120deg,#F4F2EB,#E9E6D9);color:var(--forest-deep);}
+  .slide.s3{background:linear-gradient(120deg,#E6E0CE,#D6CDB4);color:var(--forest-deep);}
   .slide .tag{display:inline-block;background:var(--sale);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px;}
   .slide.s2 .tag{background:var(--forest);}
   .slide h2{font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:14px;}
@@ -165,7 +166,7 @@
   .price-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
   .price{font-size:19px;font-weight:800;color:var(--forest-deep);}
   .price-old{font-size:13.5px;color:#9aa591;text-decoration:line-through;}
-  .save-pill{background:#FCE9E6;color:var(--sale);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;}
+  .save-pill{background:#F2E7E1;color:var(--sale);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;}
   .pcard .btn{margin-top:auto;width:100%;border-radius:8px;padding:11px;}
 
   /* discount tiers */
@@ -174,10 +175,10 @@
   .tiers .sec-head p{color:#b8c4ad;}
   .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .tier{
-    background:linear-gradient(135deg,#1B4D2E,#26593a);border:1px dashed var(--gold);border-radius:16px;
+    background:linear-gradient(135deg,#15402A,#1D4D33);border:1px dashed var(--gold);border-radius:16px;
     padding:32px 26px;text-align:center;position:relative;overflow:hidden;
   }
-  .tier::before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(198,161,90,.12);top:-60px;right:-40px;}
+  .tier::before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(185,153,92,.12);top:-60px;right:-40px;}
   .tier .amount{font-size:34px;font-weight:800;color:var(--gold);}
   .tier .cond{font-size:13.5px;color:#c9d3bf;margin:8px 0 18px;}
   .tier .code{display:inline-block;background:#fff;color:var(--forest-deep);font-weight:800;letter-spacing:.12em;padding:10px 24px;border-radius:8px;font-size:15px;border:2px dashed var(--gold);cursor:pointer;}
@@ -185,13 +186,14 @@
 
   /* deal banner */
   .deal-banner{
-    background:linear-gradient(110deg,var(--gold),#DCC08C);
+    background:linear-gradient(110deg,var(--forest-deep),#1B4A30);
+    border:1px solid rgba(214,196,154,.28);
     border-radius:20px;padding:44px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
   }
-  .deal-banner h3{font-size:28px;font-weight:800;color:var(--forest-deep);}
-  .deal-banner p{color:#5b4a24;font-size:14.5px;margin-top:6px;}
+  .deal-banner h3{font-size:28px;font-weight:800;color:var(--gold-light);}
+  .deal-banner p{color:#C4CEBB;font-size:14.5px;margin-top:6px;}
   .countdown{display:flex;gap:12px;}
-  .cd{background:var(--forest-deep);color:#fff;border-radius:10px;padding:12px 16px;text-align:center;min-width:66px;}
+  .cd{background:rgba(255,255,255,.06);border:1px solid rgba(214,196,154,.35);color:#fff;border-radius:10px;padding:12px 16px;text-align:center;min-width:66px;}
   .cd b{font-size:24px;display:block;}
   .cd span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#b8c4ad;}
 
@@ -256,7 +258,7 @@
   .promise{background:var(--forest-deep);color:#fff;padding:70px 0;}
   .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
   .promise-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;text-align:center;}
-  .promise-card .picon{width:56px;height:56px;border-radius:50%;background:rgba(198,161,90,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .promise-card .picon{width:56px;height:56px;border-radius:50%;background:rgba(185,153,92,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
   .promise-card .picon svg{width:26px;height:26px;color:var(--gold);}
   .promise-card h4{font-size:16px;margin-bottom:8px;}
   .promise-card p{font-size:13px;color:#b8c4ad;line-height:1.6;}
@@ -645,7 +647,7 @@
         <div class="cd"><b id="cd-m">42</b><span>Minutes</span></div>
         <div class="cd"><b id="cd-s">18</b><span>Seconds</span></div>
       </div>
-      <a href="#shop" class="btn btn-sale">Shop the Sale</a>
+      <a href="#shop" class="btn btn-gold">Shop the Sale</a>
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Ritual gift box placeholder">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5F0E1"/><stop offset="1" stop-color="#E5DCC2"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2EFE6"/><stop offset="1" stop-color="#DED7C2"/></linearGradient>
 <linearGradient id="boxb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#226038"/><stop offset="1" stop-color="#123420"/></linearGradient>
 <linearGradient id="boxl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A6B41"/><stop offset="1" stop-color="#16412A"/></linearGradient>
 </defs>
@@ -11,16 +11,16 @@
 </g>
 <circle cx="300" cy="330" r="190" fill="#fff" opacity=".4"/>
 <ellipse cx="300" cy="502" rx="180" ry="17" fill="#1B4D2E" opacity=".15"/>
-<g fill="#C6A15A" opacity=".8">
+<g fill="#B9995C" opacity=".8">
 <circle cx="170" cy="200" r="5"/><circle cx="442" cy="168" r="4"/><circle cx="472" cy="250" r="6"/><circle cx="140" cy="300" r="4"/>
 </g>
 <rect x="165" y="310" width="270" height="168" rx="12" fill="url(#boxb)"/>
 <rect x="150" y="252" width="300" height="64" rx="12" fill="url(#boxl)"/>
-<rect x="282" y="252" width="36" height="226" fill="#C6A15A"/>
-<path d="M300 252c-16-36-60-42-66-14-5 23 28 27 66 14z" fill="#C6A15A"/>
-<path d="M300 252c16-36 60-42 66-14 5 23-28 27-66 14z" fill="#C6A15A"/>
-<circle cx="300" cy="250" r="11" fill="#A9834A"/>
-<path d="M225 380c-6 10-8 20-6 28 6-2 14-8 18-18 3-9 1-16-2-20-4 2-7 5-10 10z" fill="#8BC34A"/>
-<text x="366" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#F5F1E6" letter-spacing="2">RITUAL</text>
-<text x="366" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#C6A15A" letter-spacing="2">BOX</text>
+<rect x="282" y="252" width="36" height="226" fill="#B9995C"/>
+<path d="M300 252c-16-36-60-42-66-14-5 23 28 27 66 14z" fill="#B9995C"/>
+<path d="M300 252c16-36 60-42 66-14 5 23-28 27-66 14z" fill="#B9995C"/>
+<circle cx="300" cy="250" r="11" fill="#9C8050"/>
+<path d="M225 380c-6 10-8 20-6 28 6-2 14-8 18-18 3-9 1-16-2-20-4 2-7 5-10 10z" fill="#74A17E"/>
+<text x="366" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#F4F2EB" letter-spacing="2">RITUAL</text>
+<text x="366" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#B9995C" letter-spacing="2">BOX</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Scalp detox scrub placeholder">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4EBD8"/><stop offset="1" stop-color="#C9D8B4"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4E9DC"/><stop offset="1" stop-color="#CBD5BC"/></linearGradient>
 <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98B5C"/><stop offset="1" stop-color="#916740"/></linearGradient>
 <linearGradient id="jar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#454C42"/><stop offset="1" stop-color="#23291F"/></linearGradient>
 </defs>
@@ -14,9 +14,9 @@
 <rect x="202" y="238" width="196" height="56" rx="16" fill="url(#lid)"/>
 <rect x="202" y="282" width="196" height="10" fill="#7A5533"/>
 <rect x="212" y="292" width="176" height="216" rx="24" fill="url(#jar)"/>
-<rect x="224" y="336" width="152" height="112" rx="9" fill="#F5F1E6"/>
-<path d="M300 350c-8 6-12 14-12 21 0 8 5 13 12 13s12-5 12-13c0-7-4-15-12-21z" fill="#4CAF50"/>
+<rect x="224" y="336" width="152" height="112" rx="9" fill="#F4F2EB"/>
+<path d="M300 350c-8 6-12 14-12 21 0 8 5 13 12 13s12-5 12-13c0-7-4-15-12-21z" fill="#4E8B60"/>
 <text x="300" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B4D2E" letter-spacing="1">ORGANO+</text>
-<rect x="276" y="420" width="48" height="3" rx="1.5" fill="#C6A15A"/>
+<rect x="276" y="420" width="48" height="3" rx="1.5" fill="#B9995C"/>
 <text x="300" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#5B6B52">Scalp Detox Scrub</text>
 </svg>
