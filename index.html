@@ -5,23 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organo+ | Template 2 — Organic Store</title>
 <meta name="description" content="Organo+ — Herbal by Nature. Pakistan's trusted online store for 100% natural &amp; organic hair and skin care products.">
-<meta name="theme-color" content="#15402A">
+<meta name="theme-color" content="#10241A">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Marcellus&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest:#15402A;
-    --forest-deep:#0D2B1C;
-    --leaf:#5F8A6C;
-    --leaf-light:#8FAE93;
-    --cream:#F4F2EB;
-    --gold:#B9995C;
-    --gold-light:#D6C49A;
-    --sale:#96352A;
-    --ink:#1F261E;
-    --line:rgba(21,64,42,0.14);
+    --forest:#10241A;
+    --forest-deep:#0C1810;
+    --leaf:#6E8F79;
+    --leaf-light:#9DB3A2;
+    --cream:#F6F4EE;
+    --gold:#C2A566;
+    --gold-light:#DFCEA3;
+    --sale:#8E3226;
+    --ink:#1A201B;
+    --line:rgba(16,36,26,0.12);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -30,7 +30,7 @@
   ul{list-style:none;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1280px;margin:0 auto;padding:0 24px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:.3s;font-family:inherit;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;border-radius:3px;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.14em;cursor:pointer;border:none;transition:.3s;font-family:inherit;}
   .btn-green{background:var(--forest);color:#fff;}
   .btn-green:hover{background:var(--forest-deep);}
   .btn-gold{background:var(--gold);color:var(--forest-deep);}
@@ -38,7 +38,7 @@
   .btn-sale{background:var(--sale);color:#fff;}
   .btn-sale:hover{filter:brightness(1.1);}
 
-  .leaf-ph{position:relative;background:linear-gradient(135deg,#ECEFE6,#DDE3D3 40%,#CCD6C1);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .leaf-ph{position:relative;background:linear-gradient(135deg,#EDEFE7,#DFE3D8 40%,#D0D6C8);display:flex;align-items:center;justify-content:center;overflow:hidden;}
   .pimg img,.timg img,.cimg img,.bimg img,.gal-grid .g img,.slide-visual img{width:100%;height:100%;object-fit:cover;display:block;}
   .pimg img,.timg img,.gal-grid .g img{transition:transform .5s ease;}
   .pcard:hover .pimg img,.tcard:hover .timg img,.gal-grid .g:hover img{transform:scale(1.06);}
@@ -52,13 +52,14 @@
   .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
   .menu-btn svg{width:26px;height:26px;color:var(--forest);display:block;}
   .search{flex:1;display:flex;max-width:560px;}
-  .search input{flex:1;min-width:0;border:2px solid var(--forest);border-right:none;border-radius:8px 0 0 8px;padding:11px 16px;font-size:14px;outline:none;font-family:inherit;}
-  .search button{background:var(--forest);color:#fff;border:none;border-radius:0 8px 8px 0;padding:0 20px;cursor:pointer;}
+  .search input{flex:1;min-width:0;border:1px solid rgba(16,36,26,.35);border-right:none;border-radius:3px 0 0 3px;padding:12px 16px;font-size:14px;outline:none;font-family:inherit;}
+  .search input:focus{border-color:var(--forest);}
+  .search button{background:var(--forest);color:#fff;border:none;border-radius:0 3px 3px 0;padding:0 20px;cursor:pointer;}
   .search button svg{width:18px;height:18px;display:block;}
   .head-icons{display:flex;gap:22px;margin-left:auto;align-items:center;}
   .head-icons a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:#4a5546;font-weight:500;position:relative;}
   .head-icons svg{width:22px;height:22px;color:var(--forest);}
-  .cart-count{position:absolute;top:-6px;right:2px;background:var(--sale);color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .cart-count{position:absolute;top:-6px;right:2px;background:var(--gold);color:var(--forest-deep);font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
 
   nav.mainnav{background:var(--forest);position:sticky;top:0;z-index:900;}
   .mainnav .wrap{display:flex;align-items:center;}
@@ -113,14 +114,16 @@
     min-width:100%;min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;
     padding:50px 8vw;gap:30px;
   }
-  .slide.s1{background:linear-gradient(120deg,#0D2B1C,#15402A 60%,#23573A);color:#fff;}
-  .slide.s2{background:linear-gradient(120deg,#F4F2EB,#E9E6D9);color:var(--forest-deep);}
-  .slide.s3{background:linear-gradient(120deg,#E6E0CE,#D6CDB4);color:var(--forest-deep);}
-  .slide .tag{display:inline-block;background:var(--sale);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px;}
+  .slide.s1{background:linear-gradient(120deg,#0C1810,#132B1E 55%,#1E4630);color:#fff;}
+  .slide.s2{background:linear-gradient(120deg,#F6F4EE,#ECE9E0);color:var(--forest-deep);}
+  .slide.s3{background:linear-gradient(120deg,#0F3323,#1C5A3D);color:#fff;}
+  .slide .tag{display:inline-block;background:var(--sale);color:#fff;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:8px 18px;border-radius:2px;margin-bottom:18px;}
   .slide.s2 .tag{background:var(--forest);}
-  .slide h2{font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:14px;}
-  .slide h2 span{color:var(--gold);}
-  .slide.s2 h2 span,.slide.s3 h2 span{color:var(--sale);}
+  .slide.s3 .tag{background:var(--gold);color:var(--forest-deep);}
+  .slide h2{font-family:'Marcellus',Georgia,serif;font-size:clamp(30px,4.2vw,56px);font-weight:400;line-height:1.1;margin-bottom:14px;}
+  .slide h2 span{color:var(--gold-light);}
+  .slide.s2 h2 span{color:var(--gold);}
+  .slide.s3 h2 span{color:var(--gold-light);}
   .slide p{font-size:16px;opacity:.9;margin-bottom:26px;max-width:440px;}
   .slide-visual{height:330px;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(18,52,32,.45);}
   .slider-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
@@ -141,7 +144,7 @@
   /* section head */
   section{padding:64px 0;}
   .sec-head{text-align:center;margin-bottom:40px;}
-  .sec-head h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--forest-deep);text-transform:uppercase;letter-spacing:.03em;}
+  .sec-head h2{font-family:'Marcellus',Georgia,serif;font-size:clamp(26px,3.2vw,40px);font-weight:400;color:var(--forest-deep);text-transform:uppercase;letter-spacing:.08em;}
   .sec-head .underline{width:70px;height:3px;background:var(--gold);margin:14px auto 0;border-radius:2px;}
   .sec-head p{margin-top:12px;color:#6a7460;font-size:15px;}
 
@@ -175,25 +178,25 @@
   .tiers .sec-head p{color:#b8c4ad;}
   .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .tier{
-    background:linear-gradient(135deg,#15402A,#1D4D33);border:1px dashed var(--gold);border-radius:16px;
+    background:linear-gradient(135deg,#10241A,#173523);border:1px dashed var(--gold);border-radius:10px;
     padding:32px 26px;text-align:center;position:relative;overflow:hidden;
   }
-  .tier::before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(185,153,92,.12);top:-60px;right:-40px;}
-  .tier .amount{font-size:34px;font-weight:800;color:var(--gold);}
+  .tier::before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(194,165,102,.12);top:-60px;right:-40px;}
+  .tier .amount{font-family:'Marcellus',Georgia,serif;font-size:36px;font-weight:400;color:var(--gold-light);}
   .tier .cond{font-size:13.5px;color:#c9d3bf;margin:8px 0 18px;}
   .tier .code{display:inline-block;background:#fff;color:var(--forest-deep);font-weight:800;letter-spacing:.12em;padding:10px 24px;border-radius:8px;font-size:15px;border:2px dashed var(--gold);cursor:pointer;}
   .tier small{display:block;margin-top:10px;font-size:11px;color:#93a289;}
 
   /* deal banner */
   .deal-banner{
-    background:linear-gradient(110deg,var(--forest-deep),#1B4A30);
-    border:1px solid rgba(214,196,154,.28);
-    border-radius:20px;padding:44px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+    background:linear-gradient(110deg,#0C1810,#14301F);
+    border:1px solid rgba(223,206,163,.3);
+    border-radius:14px;padding:44px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
   }
-  .deal-banner h3{font-size:28px;font-weight:800;color:var(--gold-light);}
-  .deal-banner p{color:#C4CEBB;font-size:14.5px;margin-top:6px;}
+  .deal-banner h3{font-family:'Marcellus',Georgia,serif;font-size:30px;font-weight:400;color:var(--gold-light);letter-spacing:.03em;}
+  .deal-banner p{color:#B9C2B0;font-size:14.5px;margin-top:6px;}
   .countdown{display:flex;gap:12px;}
-  .cd{background:rgba(255,255,255,.06);border:1px solid rgba(214,196,154,.35);color:#fff;border-radius:10px;padding:12px 16px;text-align:center;min-width:66px;}
+  .cd{background:rgba(255,255,255,.05);border:1px solid rgba(223,206,163,.32);color:#fff;border-radius:8px;padding:12px 16px;text-align:center;min-width:66px;}
   .cd b{font-size:24px;display:block;}
   .cd span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#b8c4ad;}
 
@@ -219,7 +222,7 @@
   .bcard .bimg{height:190px;}
   .bcard .bbody{padding:20px;}
   .bcard .bdate{font-size:11px;font-weight:700;color:var(--leaf);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
-  .bcard h4{font-size:16.5px;line-height:1.35;margin-bottom:8px;}
+  .bcard h4{font-family:'Marcellus',Georgia,serif;font-size:18px;font-weight:400;line-height:1.35;margin-bottom:8px;}
   .bcard p{font-size:13px;color:#6a7460;line-height:1.6;}
   .bcard .more{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--forest);}
 
@@ -258,7 +261,7 @@
   .promise{background:var(--forest-deep);color:#fff;padding:70px 0;}
   .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
   .promise-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;text-align:center;}
-  .promise-card .picon{width:56px;height:56px;border-radius:50%;background:rgba(185,153,92,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .promise-card .picon{width:56px;height:56px;border-radius:50%;background:rgba(194,165,102,.14);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
   .promise-card .picon svg{width:26px;height:26px;color:var(--gold);}
   .promise-card h4{font-size:16px;margin-bottom:8px;}
   .promise-card p{font-size:13px;color:#b8c4ad;line-height:1.6;}
@@ -266,7 +269,7 @@
 
   /* newsletter */
   .newsletter{background:var(--forest);color:#fff;text-align:center;padding:60px 24px;}
-  .newsletter h3{font-size:26px;font-weight:800;margin-bottom:8px;}
+  .newsletter h3{font-family:'Marcellus',Georgia,serif;font-size:28px;font-weight:400;letter-spacing:.04em;margin-bottom:8px;}
   .newsletter p{color:#b8c4ad;font-size:14px;margin-bottom:24px;}
   .nl-form{display:flex;gap:10px;max-width:480px;margin:0 auto;}
   .nl-form input{flex:1;min-width:0;padding:14px 18px;border-radius:8px;border:none;font-size:14px;font-family:inherit;}
@@ -531,7 +534,7 @@
         <h2>Complete Ritual Box — <span>Save $14</span></h2>
         <p>Hair oil, shampoo &amp; aloe gel together. The full natural routine in one eco-friendly gift box.</p>
         <span class="ur tag-ur">مکمل قدرتی روٹین، ایک خوبصورت تحفے کے ڈبے میں</span>
-        <a href="#shop" class="btn btn-sale">Grab the Deal</a>
+        <a href="#shop" class="btn btn-gold">Grab the Deal</a>
       </div>
       <div class="slide-visual leaf-ph"><img src="assets/img/giftbox.svg" alt="Ritual gift box"></div>
     </div>
